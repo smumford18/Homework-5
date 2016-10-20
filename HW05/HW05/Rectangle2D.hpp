@@ -33,6 +33,13 @@ public:
     int setWidth(int newWidth);
     int setHeight(int newHeight);
     
+    const int getArea();
+    const int getPerimeter();
+    
+    const bool contains(double x, double y);
+    const bool contains(const Rectangle2D &r);
+    const bool overlaps(const Rectangle2D &r);
+    
 };
 
 #endif /* Rectangle2D_hpp */
