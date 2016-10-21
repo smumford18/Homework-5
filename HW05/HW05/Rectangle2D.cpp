@@ -68,13 +68,13 @@ int Rectangle2D::setHeight(int newHeight)
 
 const int Rectangle2D::getArea()
 {
-    int area = x * y;
+    int area = width * height;
     return area;
 }
 
 const int Rectangle2D::getPerimeter()
 {
-    int perimeter = (2*x) + (2*y);
+    int perimeter = (2*width) + (2*height);
     return perimeter;
 }
 
@@ -102,8 +102,16 @@ const bool Rectangle2D::overlaps(const Rectangle2D &r)
     if((r.x + (r.width/2)) < (x + (width/2)) ||
        (r.x - (r.width/2)) > (x - (width/2)) ||
        (r.y + (r.height/2)) < (y + (height/2)) ||
-       (r.y - (r.height/2)) > (y - (height/2)))
-        return true;
+       (r.y - (r.height/2)) > (y - (height/2))) {
+        if((r.x + (r.width/2)) < (x + (width/2)) &&
+           (r.x - (r.width/2)) > (x - (width/2)) &&
+           (r.y + (r.height/2)) < (y + (height/2)) &&
+           (r.y - (r.height/2)) > (y - (height/2))) {
+            return false;
+        }
+        else
+            return true;
+    }
     else
         return false;
 }
