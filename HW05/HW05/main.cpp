@@ -9,6 +9,7 @@
 #include <iostream>
 #include <ctime>
 #include "Rectangle2D.hpp"
+#include "Course.hpp"
 
 using namespace std;
 
@@ -83,6 +84,23 @@ int main() {
     else
         cout << "The 3rd rectangle doesn't overlap with the first rectangle.\n";
 
+    // Problem 11.13
+    
+    Course course1("Calculus", 40);
+    
+    course1.addStudent("Nathan");
+    course1.addStudent("Lydia");
+    course1.addStudent("Bob");
+    
+    for(int i=0; i < course1.getNumberOfStudents(); i++)
+        cout << *(course1.getStudents()+i) << endl;
+    
+    course1.dropStudent("Nathan");
+    
+    for(int i=0; i < course1.getNumberOfStudents(); i++)
+        cout << *(course1.getStudents()+i) << endl;
+
+    
     return 0;
 }
 
@@ -90,7 +108,6 @@ int *doubleCapacity(const int* list, int size)
 {
     size *= 2;
     int *newList = new int[2*size];
-    //int *y = newList;
     for(int i=0; i < size; i++)
         newList[i] = list[i];
     
