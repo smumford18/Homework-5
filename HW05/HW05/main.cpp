@@ -47,8 +47,17 @@ int main() {
     delete[] y;
     
     //Problem 11.3
-    int *list = new int[3];
-    list = doubleCapacity(list, 3);
+    int arraySize = 3;
+    int *list = new int[arraySize];
+    list = doubleCapacity(list, arraySize);
+    
+    for(int i =0; i<arraySize; i++)
+        list[i] = i+1;
+    
+    for (int i=0; i < 2*arraySize; i++)
+        cout << list[i];
+    cout << endl;
+    
     delete[] list;
     
     
@@ -63,9 +72,9 @@ int main() {
     
     
     //Problem 11.9
-    Rectangle2D r1(0, 0, 5, 5);
-    Rectangle2D r2(0, 0, 6, 3);
-    Rectangle2D r3(0, 0, 3, 3);
+    Rectangle2D r1(2, 2, 5.5, 4.9);
+    Rectangle2D r2(4, 5, 10.5, 3.2);
+    Rectangle2D r3(3, 5, 2.3, 5.4);
     
     cout << "The area of the first rectangle is " << r1.getArea() << " and the perimeter is " << r1.getPerimeter() << "." << endl;
     
@@ -110,6 +119,9 @@ int *doubleCapacity(const int* list, int size)
     int *newList = new int[2*size];
     for(int i=0; i < size; i++)
         newList[i] = list[i];
+    
+    for(int i = 0; i < 2*size; i++)
+        newList[i]=0;
     
     return newList;
 }

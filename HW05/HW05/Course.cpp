@@ -38,19 +38,24 @@ void Course::addStudent(const string& name)
     
     if(numberOfStudents == capacity)
     {
+        capacity *= 2;
         string *newList = new string[2*capacity];
-        for(int i=0; i < 2*capacity; i++)
+        for(int i=0; i < capacity; i++)
             newList[i] = students[i];
+        
+        for(int i = 0; i < 2*capacity; i++)
+            newList[i] = "";
     }
 }
 
 void Course::dropStudent(const string& name)
 {
     //int offset =sizeof(string);
-    string *ptr = students;
-    for(ptr =students; ptr < students+capacity; ptr++)
-        if(*ptr == name)
-            *ptr = "";
+    //string *ptr = students;
+    //for(ptr =students; ptr < students+offset; ptr++)
+    for(int i=0; i < capacity; i++)
+        if(*(getStudents()+i) == name)
+            students[i] = "";
     numberOfStudents--;
 }
 
@@ -62,5 +67,10 @@ string* Course::getStudents() const
 int Course::getNumberOfStudents() const
 {
     return numberOfStudents;
+}
+
+void Course::clear()
+{
+    
 }
 

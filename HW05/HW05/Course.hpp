@@ -29,7 +29,7 @@ public:
     void dropStudent(const string& name);
     string* getStudents() const;
     int getNumberOfStudents() const;
-    
+    void clear();
 };
 
 #endif /* Course_hpp */
