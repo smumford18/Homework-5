@@ -27,6 +27,15 @@ Course::~Course()
     delete[] students;
 }
 
+// Copy constructor
+Course::Course(const Course& course)
+{
+    courseName = course.courseName;
+    numberOfStudents = course.numberOfStudents;
+    capacity = course.capacity;
+    students = new string[capacity];
+}
+
 // Getter for the name of the course
 string Course::getCourseName() const
 {

@@ -51,8 +51,9 @@ int main() {
     }
     
     // Displays the average and how many values in the array are above the average
-    cout << "The average is " << avg << ".\nThe number of values above the average is " << valuesAboveAvg << ".\n";
+    cout << "The average is " << avg << ".\nThe number of values above the average is " << valuesAboveAvg << ".\n\n";
     delete[] y;
+    
     
 //Problem 11.3
     // Creates an array
@@ -67,7 +68,7 @@ int main() {
     // Displays the values in the new array
     for (int i=0; i < 2*arraySize; i++)
         cout << list[i];
-    cout << endl;
+    cout << "\n\n";
     
     delete[] list;
     
@@ -76,7 +77,7 @@ int main() {
     int sampleList[8] = {1, 2, 4, 5, 10, 100, 2, -22};
     
     // Uses the findSmallest function to return the smallest value in the array
-    cout << "The smallest value in the array is: " << findSmallest(sampleList, 8) << endl;
+    cout << "The smallest value in the array is: " << findSmallest(sampleList, 8) << "\n\n";
     
     //Problem 11.9
     // Creates three rectrangle objects
@@ -104,7 +105,8 @@ int main() {
         cout << "The 3rd rectangle overlaps with the first rectangle.\n";
     else
         cout << "The 3rd rectangle doesn't overlap with the first rectangle.\n";
-
+    cout << endl;
+    
 // Problem 11.13
     // Creates a calculus course with a capacity
     Course course1("Calculus", 40);
@@ -113,10 +115,6 @@ int main() {
     course1.addStudent("Nathan");
     course1.addStudent("Lydia");
     course1.addStudent("Bob");
-    
-    // Displays the students in the class
-    for(int i=0; i < course1.getNumberOfStudents(); i++)
-        cout << *(course1.getStudents()+i) << endl;
     
     // Deletes a student from the class
     course1.dropStudent("Bob");
@@ -131,15 +129,20 @@ int main() {
 // Function that doubles the size of an array
 int *doubleCapacity(const int* list, int size)
 {
-    size *= 2;
-    int *newList = new int[2*size];
-    for(int i=0; i < size; i++)
-        newList[i] = list[i];
-    
-    for(int i = 0; i < 2*size; i++)
-        newList[i]=0;
-    
-    return newList;
+    if( size > 0 && list != NULL)
+    {
+        int *newList = new int[2*size];
+        
+        for(int i=0; i < size; i++)
+            newList[i] = list[i];
+        
+        for(int i = 0; i < 2*size; i++)
+            newList[i]= NULL;
+        
+        return newList;
+    }
+    else
+        return NULL;
 }
 
 // Function to find the smallest value in an array

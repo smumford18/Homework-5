@@ -22,9 +22,10 @@ class Course
     int capacity;
     
 public:
-    // Constructor and deconstructor
+    // Constructors and deconstructor
     Course(const string& courseName, int capacity);
     ~Course();
+    Course(const Course&);
     
     // Getter functions
     string getCourseName() const;
