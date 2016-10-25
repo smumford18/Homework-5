@@ -59,9 +59,10 @@ void Course::dropStudent(const string& name)
     //string *ptr = students;
     //for(ptr =students; ptr < students+offset; ptr++)
     for(int i=0; i < capacity; i++)
-        if(*(getStudents()+i) == name)
-            students[i] = "";
-    numberOfStudents--;
+        if(*(getStudents()+i) == name) {
+            *(students+i) = "";
+            numberOfStudents--;
+        }
 }
 
 // Getter function for the students in a course
@@ -79,6 +80,8 @@ int Course::getNumberOfStudents() const
 // Function that removes all the students from a course
 void Course::clear()
 {
-    
+    for(int i=0; i < capacity; i++)
+        *(students+i)="";
+    numberOfStudents = 0;
 }
 
