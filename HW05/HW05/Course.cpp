@@ -10,6 +10,7 @@
 
 using namespace std;
 
+// Constructor function
 Course::Course(const string& courseName, int capacity)
 {
     
@@ -20,16 +21,19 @@ Course::Course(const string& courseName, int capacity)
     
 }
 
+// Deconstructor
 Course::~Course()
 {
     delete[] students;
 }
 
+// Getter for the name of the course
 string Course::getCourseName() const
 {
     return courseName;
 }
 
+// Function that adds a student to course
 void Course::addStudent(const string& name)
 {
     if(numberOfStudents != capacity)
@@ -48,6 +52,7 @@ void Course::addStudent(const string& name)
     }
 }
 
+// Function that drops a student from a course
 void Course::dropStudent(const string& name)
 {
     //int offset =sizeof(string);
@@ -59,16 +64,19 @@ void Course::dropStudent(const string& name)
     numberOfStudents--;
 }
 
+// Getter function for the students in a course
 string* Course::getStudents() const
 {
     return students;
 }
 
+// Getter function for the number of students in a course
 int Course::getNumberOfStudents() const
 {
     return numberOfStudents;
 }
 
+// Function that removes all the students from a course
 void Course::clear()
 {
     

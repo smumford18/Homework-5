@@ -22,13 +22,18 @@ class Course
     int capacity;
     
 public:
+    // Constructor and deconstructor
     Course(const string& courseName, int capacity);
     ~Course();
+    
+    // Getter functions
     string getCourseName() const;
-    void addStudent(const string& name);
-    void dropStudent(const string& name);
     string* getStudents() const;
     int getNumberOfStudents() const;
+    
+    // Functions that manipulate the students in the course
+    void addStudent(const string& name);
+    void dropStudent(const string& name);
     void clear();
 };
 

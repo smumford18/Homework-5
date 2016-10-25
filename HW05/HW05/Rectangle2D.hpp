@@ -20,22 +20,27 @@ class Rectangle2D {
     
 public:
     
+    // Constructors
     Rectangle2D();
     Rectangle2D(int x1, int y1, int width1, int height1);
     
+    // Getters and setters for x and y values
     const int getX();
     const int getY();
     int setX(int newX);
     int setY(int newY);
     
+    // Getters and setters for the width and height
     const int getWidth();
     const int getHeight();
     int setWidth(int newWidth);
     int setHeight(int newHeight);
     
+    // Functions to calculate area and perimeter
     const int getArea();
     const int getPerimeter();
     
+    // Functions to check relationships between two rectangles
     const bool contains(double x, double y);
     const bool contains(const Rectangle2D &r);
     const bool overlaps(const Rectangle2D &r);
