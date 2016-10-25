@@ -55,12 +55,11 @@ void Course::addStudent(const string& name)
 // Function that drops a student from a course
 void Course::dropStudent(const string& name)
 {
-    //int offset =sizeof(string);
-    //string *ptr = students;
-    //for(ptr =students; ptr < students+offset; ptr++)
     for(int i=0; i < capacity; i++)
         if(*(getStudents()+i) == name) {
             *(students+i) = "";
+            for(int j=0; j < numberOfStudents+1; j++)
+                *(students+i) = *(students+i+1);
             numberOfStudents--;
         }
 }

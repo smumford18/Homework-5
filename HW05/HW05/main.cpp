@@ -119,14 +119,9 @@ int main() {
         cout << *(course1.getStudents()+i) << endl;
     
     // Deletes a student from the class
-    course1.dropStudent("Nathan");
+    course1.dropStudent("Bob");
     
     // Displays the students in the class after one is dropped
-    for(int i=0; i < course1.getNumberOfStudents(); i++)
-        cout << *(course1.getStudents()+i) << endl;
-    
-    course1.clear();
-    
     for(int i=0; i < course1.getNumberOfStudents(); i++)
         cout << *(course1.getStudents()+i) << endl;
     
