@@ -17,7 +17,7 @@ Rectangle2D::Rectangle2D() {
 }
 
 // Constructor function
-Rectangle2D::Rectangle2D(int x1, int y1, int width1, int height1)
+Rectangle2D::Rectangle2D(double x1, double y1, double width1, double height1)
 {
     x = x1;
     y = y1;
@@ -26,66 +26,66 @@ Rectangle2D::Rectangle2D(int x1, int y1, int width1, int height1)
 }
 
 // Getter function for x
-const int Rectangle2D::getX()
+const double Rectangle2D::getX()
 {
     return x;
 }
 
 // Getter function for y
-const int Rectangle2D::getY()
+const double Rectangle2D::getY()
 {
     return y;
 }
 
 // Setter function for x
-int Rectangle2D::setX(int newX)
+double Rectangle2D::setX(double newX)
 {
     x = newX;
     return x;
 }
 
 // Setter function for y
-int Rectangle2D::setY(int newY)
+double Rectangle2D::setY(double newY)
 {
     y = newY;
     return y;
 }
 
 // Getter function for the width of the rectangle
-const int Rectangle2D::getWidth()
+const double Rectangle2D::getWidth()
 {
     return width;
 }
 
 // Getter function for the heigh of the rectangle
-const int Rectangle2D::getHeight()
+const double Rectangle2D::getHeight()
 {
     return height;
 }
 
 // Setter function for the width of the rectangle
-int Rectangle2D::setWidth(int newWidth)
+double Rectangle2D::setWidth(double newWidth)
 {
     width = newWidth;
     return width;
 }
 
 // Setter function for the height of the rectangle
-int Rectangle2D::setHeight(int newHeight)
+double Rectangle2D::setHeight(double newHeight)
 {
     height = newHeight;
     return height;
 }
 
 // Calculates and returns the area of the rectangle
-const int Rectangle2D::getArea()
+const double Rectangle2D::getArea()
 {
     int area = width * height;
     return area;
 }
 
 // Calculates and returns the perimeter of the rectangle
-const int Rectangle2D::getPerimeter()
+const double Rectangle2D::getPerimeter()
 {
     int perimeter = (2*width) + (2*height);
     return perimeter;
