@@ -57,7 +57,7 @@ int main() {
     
 //Problem 11.3
     // Creates an array
-    int arraySize = 3;
+    int arraySize = 4;
     int *list = new int[arraySize];
     list = doubleCapacity(list, arraySize);
     
@@ -71,7 +71,7 @@ int main() {
     cout << "\n\n";
     
     delete[] list;
-    
+
 // Problem 11.5
     // A test array used to test the findSmallest function
     int sampleList[8] = {1, 2, 4, 5, 10, 100, 2, -22};
@@ -90,9 +90,9 @@ int main() {
     
     // Uses the contains point function to see if the point is contained by the rectangle
     if(r1.contains(3, 3) == true)
-        cout << "The point (3, 3) is in the first rectangle.\n";
+        cout << "The point (3, 3) is inside the first rectangle.\n";
     else
-        cout << "The point (3, 3) is not in the first rectangle.\n";
+        cout << "The point (3, 3) is not inside the first rectangle.\n";
     
     // Uses the contains function to see if the first rectangle contains the second rectangle
     if(r1.contains(r2) == true)
